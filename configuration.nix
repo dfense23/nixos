@@ -59,6 +59,9 @@
     packages = with pkgs; [];
   };
 
+  # Enable Flakes and the new command-line tool
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -70,7 +73,11 @@
     eza
     tmux
     git
+    gh
   ];
+
+  # Set default editor to vim
+  environment.variables.EDITOR = "nvim";
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
