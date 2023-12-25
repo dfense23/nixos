@@ -5,16 +5,16 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hosts/minix/hardware-configuration.nix
-    ];
+  imports = [ # Include the results of the hardware scan.
+    ./hosts/minix/hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   # boot.kernelPackages = pkgs.linuxPackages_latest # for latest kernel
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_5_4; # kernel downgrade because of ACPI errors on minix with latest kernel (ic2) 
+  boot.kernelPackages =
+    pkgs.linuxKernel.packages.linux_5_4; # kernel downgrade because of ACPI errors on minix with latest kernel (ic2)
 
   networking.hostName = "minix"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -54,7 +54,7 @@
       noto-fonts-emoji
 
       # nerdfonts
-      (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
+      (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
     ];
 
     # use fonts specified by user rather than default ones
@@ -64,10 +64,10 @@
     # the reason there's Noto Color Emoji everywhere is to override DejaVu's
     # B&W emojis that would sometimes show instead of some Color emojis
     fontconfig.defaultFonts = {
-      serif = ["Noto Serif" "Noto Color Emoji"];
-      sansSerif = ["Noto Sans" "Noto Color Emoji"];
-      monospace = ["JetBrainsMono Nerd Font" "Noto Color Emoji"];
-      emoji = ["Noto Color Emoji"];
+      serif = [ "Noto Serif" "Noto Color Emoji" ];
+      sansSerif = [ "Noto Sans" "Noto Color Emoji" ];
+      monospace = [ "JetBrainsMono Nerd Font" "Noto Color Emoji" ];
+      emoji = [ "Noto Color Emoji" ];
     };
   };
 
@@ -85,13 +85,13 @@
     isNormalUser = true;
     description = "dfense";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    packages = with pkgs; [ ];
   };
- nix.settings = {
+  nix.settings = {
     # given the users in this list the right to specify additional substituters via:
     #    1. `nixConfig.substituers` in `flake.nix`
     #    2. command line args `--options substituers http://xxx`
-    trusted-users = ["dfense"];
+    trusted-users = [ "dfense" ];
 
     substituters = [
       # cache mirror located in China
@@ -120,6 +120,7 @@
     eza
     tmux
     git
+    lazygit
     gh
     nnn
   ];
