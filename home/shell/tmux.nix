@@ -2,6 +2,7 @@
 programs.tmux = {
   enable = true;
   clock24 = true;
+  shortcut = " ";
   extraConfig = '' # used for less common options, intelligently combines if defined in multiple places.
 # Change the prefix key to C-Space
     unbind C-b
