@@ -42,6 +42,7 @@
   imports = [
     ./programs # import packages
     ./shell # import shell programs configs
+    ./hyprland
   ];
 
 
