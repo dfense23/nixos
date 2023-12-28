@@ -15,6 +15,8 @@
     slurp
     inputs.hyprland-contrib.packages.x86_64-linux.grimblast
     rofi-emoji
+    wl-clipboard
+    cliphist
   ];
 
   programs.wofi.enable = true;
@@ -28,12 +30,13 @@
         "hyprctl setcursor Bibata-Modern-Ice 22"
         "nm-applet"
         "swaybg -i ~/wallpaper -m fill"
-        "synology-drive"
         "waybar"
         #"[workspace 2 silent] firefox"
         "webcord"
         "[workspace special:term silent] kitty --title='kitty-scratch' --hold"
         "kitty"
+        "wl-clipboard-history -t"
+        "wl-paste --watch cliphist store"
       ];
 
 #      workspace = lib.lists.flatten (map
@@ -154,38 +157,40 @@
       ];
 
       "$mainMod" = "SUPER";
+      #"$mainMod" = "CTRL_ALT_SHIFT";
       bind = [
         "ALT, Return, exec, kitty"
         "$mainMod, w, killactive,"
         "$mainMod SHIFT, q, exit,"
         "$mainMod, f, fullscreen, 0"
-        "$mainMod, m, fullscreen, 1"
-        "$mainMod SHIFT, t, togglefloating,"
+      #  "$mainMod, m, fullscreen, 1"
+        "$mainMod, t, togglefloating,"
         "ALT, d, exec, wofi --show drun -I"
         "ALT, e, exec, wofi-emoji"
-        "$mainMod, e, exec, thunar"
+#        "$mainMod, e, exec, thunar"
         "$mainMod, P, pseudo, # dwindle"
-        "= $mainMod, J, togglesplit, # dwindle"
+        "$mainMod, J, togglesplit, # dwindle"
         "$mainMod, s, togglespecialworkspace, notes"
         "$mainMod SHIFT, S, movetoworkspace, special:notes"
         "$mainMod CTRL, t, togglespecialworkspace, term"
         "$mainMod, g, togglegroup"
         "$mainMod, TAB, changegroupactive, f"
         "$mainMod SHIFT, TAB, changegroupactive, b"
+        "$mainMod,SPACE,exec,cliphist list | wofi --show dmenu -H 600 -W 900   | cliphist decode | wl-copy"
 
-        "$mainMod, h, movefocus, l"
-        "$mainMod, l, movefocus, r"
-        "$mainMod, k, movefocus, u"
-        "$mainMod, j, movefocus, d"
+        "$mainMod, m, movefocus, l"
+        "$mainMod, i, movefocus, r"
+        "$mainMod, e, movefocus, u"
+        "$mainMod, n, movefocus, d"
 
-        "$mainMod CTRL, h, swapwindow, l"
-        "$mainMod CTRL, l, swapwindow, r"
-        "$mainMod CTRL, k, swapwindow, u"
-        "$mainMod CTRL, j, swapwindow, d"
-        "$mainMod ALT, h, moveintogroup, l"
-        "$mainMod ALT, l, moveintogroup, r"
-        "$mainMod ALT, k, moveintogroup, u"
-        "$mainMod ALT, j, moveintogroup, d"
+        "$mainMod CTRL, m, swapwindow, l"
+        "$mainMod CTRL, i, swapwindow, r"
+        "$mainMod CTRL, e, swapwindow, u"
+        "$mainMod CTRL, n, swapwindow, d"
+        "$mainMod ALT, m, moveintogroup, l"
+        "$mainMod ALT, i, moveintogroup, r"
+        "$mainMod ALT, e, moveintogroup, u"
+        "$mainMod ALT, n, moveintogroup, d"
 
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
@@ -208,9 +213,6 @@
         "$mainMod ALT, 8, movetoworkspace, 8"
         "$mainMod ALT, 9, movetoworkspace, 9"
         "$mainMod ALT, 0, movetoworkspace, 10"
-        ", XF86AudioPrev, exec, playerctl previous"
-        ", XF86AudioNext, exec, playerctl next"
-        ", XF86AudioPlay, exec, playerctl play-pause"
 
         "$mainMod ALT CTRL, equal, exec, dunstctl set-paused toggle"
         "$mainMod ALT CTRL, bracketright, exec, systemctl reboot"

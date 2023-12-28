@@ -12,6 +12,7 @@
     lxappearance
     arandr
     font-manager
+    firefox
   ];
 
   dconf.settings = {
