@@ -24,6 +24,9 @@
 	# make less more friendly for non-text input files, see lesspipe(1)
 	[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
+	# zoxide integration
+	eval "$(zoxide init bash)"
+
     '';
 
     # set some aliases, feel free to add more or remove some
