@@ -26,6 +26,11 @@
     # to avoid problems caused by different versions of nixpkgs.
     #  inputs.nixpkgs.follows = "nixpkgs";
     # };
+    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland-contrib = {
+      url = "github:hyprwm/contrib";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   # `outputs` are all the build result of the flake.
@@ -106,7 +111,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-
+            home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.users.dfense = import ./home;
 
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
@@ -128,7 +133,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-
+            home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.users.dfense = import ./home;
 
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix

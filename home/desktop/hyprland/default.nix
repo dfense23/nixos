@@ -36,11 +36,11 @@
         "kitty"
       ];
 
-      workspace = lib.lists.flatten (map
-                (m: 
-                  map (w: "${w}, monitor:${m.name}") (m.workspaces)
-                )
-                (config.monitors));
+#      workspace = lib.lists.flatten (map
+#                (m: 
+#                  map (w: "${w}, monitor:${m.name}") (m.workspaces)
+#                )
+#                (config.monitors));
 
       env = ["XCURSOR_SIZE,24"];
 
@@ -99,9 +99,9 @@
       };
 
       input = {
-        kb_layout = "us";
-        kb_variant = config.keyboard.variant;
-        kb_options = config.keyboard.options;
+        kb_layout = "ch";
+#        kb_variant = config.keyboard.variant;
+#        kb_options = config.keyboard.options;
         follow_mouse = 1;
         touchpad = {
           natural_scroll = true;
@@ -118,15 +118,15 @@
         "natural_scroll" = true;
       };
 
-      monitor = map 
-          (m:
-            let
-              resolution = "${toString m.width}x${toString m.height}@${toString m.refreshRate}";
-              position = "${toString m.x}x${toString m.y}";
-            in
-            "${m.name},${if m.enabled then "${resolution},${position},${toString m.scale}" else "disable"}"
-          )
-          (config.monitors);
+#      monitor = map 
+#          (m:
+#            let
+#              resolution = "${toString m.width}x${toString m.height}@${toString m.refreshRate}";
+#              position = "${toString m.x}x${toString m.y}";
+#            in
+#            "${m.name},${if m.enabled then "${resolution},${position},${toString m.scale}" else "disable"}"
+#          )
+#          (config.monitors);
 
       animations = {
         enabled = true;
