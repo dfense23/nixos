@@ -140,6 +140,28 @@
           }
         ];
       };
+      mac = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          # Import the configuration.nix here, so that the
+          # old configuration file can still take effect.
+          # Note: configuration.nix itself is also a Nixpkgs Module,
+          ./configuration.nix
+          ./hosts/mac/hardware-configuration.nix
+          ./hosts/mac/specconf.nix
+          # make home-manager as a module of nixos
+          # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+
+            home-manager.users.dfense = import ./home;
+
+            # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
+          }
+        ];
+      };
 
     };
   };
