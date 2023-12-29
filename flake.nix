@@ -31,6 +31,7 @@
       url = "github:hyprwm/contrib";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    lanzaboote.url = "github:nix-community/lanzaboote";
   };
 
   # `outputs` are all the build result of the flake.
@@ -43,7 +44,7 @@
   # 
   # The `@` syntax here is used to alias the attribute set of the
   # inputs's parameter, making it convenient to use inside the function.
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, lanzaboote, ... }@inputs: {
     nixosConfigurations = {
       # By default, NixOS will try to refer the nixosConfiguration with
       # its hostname, so the system named `nixos-test` will use this one.
@@ -127,6 +128,7 @@
           ./configuration.nix
           ./hosts/omen/hardware-configuration.nix
           ./hosts/omen/specconf.nix
+          lanzaboote.nixosModules.lanzaboote
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
           home-manager.nixosModules.home-manager
