@@ -9,6 +9,7 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.efi.efiSysMountPoint = "/boot";
   # boot.kernelPackages = pkgs.linuxPackages_latest # for latest kernel
   # boot.kernelPackages =
   #  pkgs.linuxKernel.packages.linux_5_4; # kernel downgrade because of ACPI errors on minix with latest kernel (ic2)
@@ -39,6 +40,9 @@
     LC_TELEPHONE = "de_CH.UTF-8";
     LC_TIME = "de_CH.UTF-8";
   };
+
+  programs.hyprland.enable = true;
+
   fonts = {
     packages = with pkgs; [
       # icon fonts
