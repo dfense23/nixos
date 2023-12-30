@@ -26,6 +26,11 @@
     # to avoid problems caused by different versions of nixpkgs.
     #  inputs.nixpkgs.follows = "nixpkgs";
     # };
+    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland-contrib = {
+      url = "github:hyprwm/contrib";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   # `outputs` are all the build result of the flake.
@@ -106,7 +111,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-
+            home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.users.dfense = import ./home;
 
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
@@ -128,14 +133,47 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-
+            home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.users.dfense = import ./home;
 
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
           }
         ];
       };
+      mac = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          # Import the configuration.nix here, so that the
+          # old configuration file can still take effect.
+          # Note: configuration.nix itself is also a Nixpkgs Module,
+          ./configuration.nix
+          ./hosts/mac/hardware-configuration.nix
+          ./hosts/mac/specconf.nix
+          # make home-manager as a module of nixos
+          # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.users.dfense = import ./home;
 
+            # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
+          }
+        ];
+      };
     };
   };
 }
+
+
+
+
+
+
+
+
+
+
+
+

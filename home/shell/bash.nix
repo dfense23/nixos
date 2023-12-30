@@ -60,8 +60,8 @@
       
       #git aliases
       #gh="git log --pretty=format:"%h %ad | %s%d" --graph --date=short"
-      gh="git log --graph --pretty=format:'%C(auto)%h%d%Creset %C(cyan)(%cr)%Creset %s'";
-      gha="git log --graph --pretty=format:'%C(auto)%h%d%Creset %C(cyan)(%cr)%Creset %s' --all";
+      ghi="git log --graph --pretty=format:'%C(auto)%h%d%Creset %C(cyan)(%cr)%Creset %s'";
+      ghia="git log --graph --pretty=format:'%C(auto)%h%d%Creset %C(cyan)(%cr)%Creset %s' --all";
       gs="git status ";
       ga="git add ";
       gb="git branch ";

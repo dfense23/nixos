@@ -19,13 +19,6 @@
   #     xxx
   # '';
 
-  wayland.windowManager.hyprland = {
-  	enable = true;
-	extraConfig = ''
-	#hyprland.conf here...
-	'';
-  };
-
   # set cursor size and dpi for 4k monitor
   xresources.properties = {
     "Xcursor.size" = 16;
@@ -42,7 +35,7 @@
   imports = [
     ./programs # import packages
     ./shell # import shell programs configs
-    ./hyprland
+    ./desktop
   ];
 
 
