@@ -2,12 +2,19 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   boot.kernelPackages = pkgs.linuxPackages_latest; # for latest kernel
 #  boot.kernelPackages =
 #    pkgs.linuxKernel.packages.linux_5_4; # kernel downgrade because of ACPI errors on minix with latest kernel (ic2)
+  boot = {
+  loader.systemd-boot.enable = lib.mkForce false;
+  lanzaboote = {
+    enable = true;
+    pkiBundle = "/etc/secureboot";
+  };
+};
 
   networking.hostName = "omen"; # Define your hostname.
 #  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
