@@ -85,7 +85,7 @@
   users.users.dfense = {
     isNormalUser = true;
     description = "dfense";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [ ];
   };
   nix.settings = {
