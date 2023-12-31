@@ -1,36 +1,27 @@
 
 { config, pkgs, lib, ... }:
-
 {
-  services.rpcbind.enable = true; # needed for NFS
-  systemd.mounts = let commonMountOptions = {
-    type = "nfs";
-    mountConfig = {
-      Options = "noatime";
-    };
+  fileSystems."/mnt/spnas01media" = {
+    device = "192.168.1.3:/volume2/media";
+    fsType = "nfs";
+    options = [ "noatime" ];
   };
 
-  in
+  fileSystems."/mnt/spnas02media" = {
+    device = "192.168.1.4:/spnas02media";
+    fsType = "nfs";
+    options = [ "noatime" ];
+  };
 
-  [
-    (commonMountOptions // {
-      what = "192.168.1.3:/volume1/docker";
-      where = "/mnt/spnas01docker/";
-    })
+  fileSystems."/mnt/spnas01docker" = {
+    device = "192.168.1.3:/volume1/docker";
+    fsType = "nfs";
+    options = [ "noatime" ];
+  };
 
-    (commonMountOptions // {
-      what = "192.168.1.3:/volume2/media";
-      where = "/mnt/spnas01media/";
-    })
-
-    (commonMountOptions // {
-      what = "192.168.1.3:/volume2/divx";
-      where = "/mnt/divx/";
-    })
-
-    (commonMountOptions // {
-      what = "192.168.1.4:/spnas02media";
-      where = "/mnt/spnas02media/";
-    })
-  ];
+  fileSystems."/mnt/divx" = {
+    device = "192.168.1.3:/volume2/divx";
+    fsType = "nfs";
+    options = [ "noatime" ];
+  };
 }
