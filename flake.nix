@@ -31,6 +31,10 @@
       url = "github:hyprwm/contrib";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprland-plugins = {
+    url = "github:hyprwm/hyprland-plugins";
+    inputs.hyprland.follows = "hyprland";
+    };
     lanzaboote.url = "github:nix-community/lanzaboote";
   };
 

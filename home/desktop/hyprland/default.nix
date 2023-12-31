@@ -17,6 +17,7 @@
     rofi-emoji
     wl-clipboard
     cliphist
+    wayvnc
   ];
 
   programs.wofi.enable = true;
@@ -24,6 +25,9 @@
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
+    plugins = [
+      inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
+    ];
     settings = {
       exec-once = [
         "dunst"
@@ -37,6 +41,7 @@
         "kitty"
         "wl-clipboard-history -t"
         "wl-paste --watch cliphist store"
+        "wayvnc 0.0.0.0"
       ];
 
 #      workspace = lib.lists.flatten (map
