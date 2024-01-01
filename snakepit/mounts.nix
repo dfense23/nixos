@@ -7,8 +7,26 @@
     options = [ "noatime" ];
   };
 
+  fileSystems."/mnt/spnas01pmedia" = {
+    device = "192.168.1.3:/volume2/pmedia";
+    fsType = "nfs";
+    options = [ "noatime" ];
+  };
+
   fileSystems."/mnt/data/piratedata/media/tv" = {
     device = "192.168.1.4:/spnas02media/series";
+    fsType = "nfs";
+    options = [ "noatime" ];
+  };
+
+  fileSystems."/mnt/data/piratedata/usenet" = {
+    device = "192.168.1.4:/spnas02media/usenet";
+    fsType = "nfs";
+    options = [ "noatime" ];
+  };
+
+  fileSystems."/mnt/data/piratedata/media/movies" = {
+    device = "192.168.1.3:/volume2/media/movies";
     fsType = "nfs";
     options = [ "noatime" ];
   };
