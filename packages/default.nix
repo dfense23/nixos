@@ -15,6 +15,7 @@
     navi
     gcc
     duf
+    du-dust
   ];
 
 
