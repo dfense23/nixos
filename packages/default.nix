@@ -12,6 +12,10 @@
     lazygit
     gh
     zoxide
+    navi
+    gcc
+    duf
+    dust
   ];
 
 

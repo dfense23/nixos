@@ -7,8 +7,8 @@
     options = [ "noatime" ];
   };
 
-  fileSystems."/mnt/spnas02media" = {
-    device = "192.168.1.4:/spnas02media";
+  fileSystems."/mnt/data/piratedata/media/tv" = {
+    device = "192.168.1.4:/spnas02media/series";
     fsType = "nfs";
     options = [ "noatime" ];
   };

@@ -58,6 +58,8 @@
       etl="exa -lT --icons -gHmhb";
       cs="cowsay";
       
+      #nixos aliases
+      nrsf="sudo nixos-rebuild switch --flake .#";
       #git aliases
       #gh="git log --pretty=format:"%h %ad | %s%d" --graph --date=short"
       ghi="git log --graph --pretty=format:'%C(auto)%h%d%Creset %C(cyan)(%cr)%Creset %s'";
