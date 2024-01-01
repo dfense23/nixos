@@ -20,7 +20,7 @@
   # '';
   fonts.fontconfig.enable = true;
   home.packages = [
-    (pkgs.nerdfonts.override { fonts = [ "FiraCode" "FiraMono" "DroidSansMono" "UbuntuMono" "Hack" "NerdFontsSymbolsOnly" ]; })
+    (pkgs.nerdfonts.override { fonts = [ "FiraCode" "FiraMono" "DroidSansMono"]; })
   ];
   # set cursor size and dpi for 4k monitor
   xresources.properties = {
