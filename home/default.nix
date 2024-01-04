@@ -18,10 +18,11 @@
   # home.file.".xxx".text = ''
   #     xxx
   # '';
-  fonts.fontconfig.enable = true;
-  home.packages = [
-    (pkgs.nerdfonts.override { fonts = [ "FiraCode" "FiraMono" "DroidSansMono"]; })
-  ];
+#   fonts.fontconfig.enable = true;
+#   home.packages = [
+#     (pkgs.nerdfonts.override { fonts = [ "FiraCode" "FiraMono" "DroidSansMono"]; })
+#   ];
+
   # set cursor size and dpi for 4k monitor
   xresources.properties = {
     "Xcursor.size" = 16;
