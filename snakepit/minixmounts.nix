@@ -13,6 +13,18 @@
     options = [ "noatime" ];
   };
 
+  fileSystems."/mnt/data/piratedata/media/movies2" = {
+    device = "192.168.1.3:/volumeUSB2/usbshare/movies";
+    fsType = "nfs";
+    options = [ "noatime" ];
+  };
+
+  fileSystems."/mnt/data/piratedata/media/tv2" = {
+    device = "192.168.1.3:/volumeUSB2/usbshare/tv";
+    fsType = "nfs";
+    options = [ "noatime" ];
+  };
+
   fileSystems."/mnt/data/piratedata/media/tv" = {
     device = "192.168.1.4:/spnas02media/series";
     fsType = "nfs";

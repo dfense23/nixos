@@ -111,7 +111,7 @@
           ./hosts/minix/hardware-configuration.nix
           ./hosts/minix/specconf.nix
           ./packages/docker.nix
-          ./snakepit/mounts.nix
+          ./snakepit/minixmounts.nix
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
           home-manager.nixosModules.home-manager

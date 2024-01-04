@@ -1,13 +1,45 @@
-{config, ...}: {
+{config, pkgs, ...}: {
 programs.tmux = {
   enable = true;
   clock24 = true;
   shortcut = " ";
+  plugins = with pkgs;
+      [
+        tmuxPlugins.sensible
+        # must be before continuum edits right status bar
+        {
+          plugin = tmuxPlugins.catppuccin;
+          extraConfig = '' 
+            set -g @catppuccin_flavour 'frappe'
+            set -g @catppuccin_window_tabs_enabled on
+            set -g @catppuccin_date_time "%H:%M"
+          '';
+        }
+        {
+          plugin = tmuxPlugins.resurrect;
+          extraConfig = ''
+            set -g @resurrect-strategy-vim 'session'
+            set -g @resurrect-strategy-nvim 'session'
+            set -g @resurrect-capture-pane-contents 'on'
+          '';
+        }
+        {
+          plugin = tmuxPlugins.continuum;
+          extraConfig = ''
+            set -g @continuum-restore 'on'
+            set -g @continuum-boot 'on'
+            set -g @continuum-save-interval '10'
+          '';
+        }
+        tmuxPlugins.better-mouse-mode
+        tmuxPlugins.yank
+      ];
+
   extraConfig = '' # used for less common options, intelligently combines if defined in multiple places.
-# Change the prefix key to C-Space
-    unbind C-b
+    # Change the prefix key to C-Space
+    set-option -g prefix C-Space
+    unbind.key C-b
     set -g prefix C-Space
-    bind C-Space send-prefix
 
 # Reload config with r
     unbind r
