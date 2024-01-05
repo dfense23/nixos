@@ -15,6 +15,9 @@
     firefox
   ];
 
+#  home.file."wallpaper/wallpaper.png".source = ./home/desktop/nix-wallpaper-dracula.png;
+  home.file."wallpaper/wallpaper.png".source = ./nix-wallpaper-dracula.png;
+
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";

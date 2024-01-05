@@ -33,7 +33,7 @@
         "dunst"
         "hyprctl setcursor Bibata-Modern-Ice 22"
         "nm-applet"
-        "swaybg -i ~/wallpaper -m fill"
+        "swaybg -i ~/wallpaper/wallpaper.png -m fill"
         "waybar"
         #"[workspace 2 silent] firefox"
         "webcord"
