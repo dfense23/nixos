@@ -26,7 +26,7 @@
     enable = true;
     xwayland.enable = true;
     plugins = [
-      inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
+      # inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
     ];
     settings = {
       exec-once = [
@@ -53,8 +53,8 @@
       env = ["XCURSOR_SIZE,24"];
 
       general = {
-        gaps_in = 5;
-        gaps_out = 5;
+        gaps_in = 2;
+        gaps_out = 2;
         border_size = 2;
         "col.active_border" = "rgb(78A8FF) rgb(7676FF) 45deg";
         "col.inactive_border" = "rgba(585272aa)";
@@ -98,8 +98,8 @@
       };
 
       misc = {
-        disable_hyprland_logo = true;
-        disable_splash_rendering = true;
+        disable_hyprland_logo = false;
+        disable_splash_rendering = false;
       };
 
       xwayland = {
@@ -112,18 +112,12 @@
 #        kb_options = config.keyboard.options;
         follow_mouse = 1;
         touchpad = {
-          natural_scroll = true;
+          natural_scroll = false;
         };
       };
 
       gestures = {
         workspace_swipe = true;
-      };
-
-      "device:getech-huge-trackball-1" = {
-        "scroll_method" = "on_button_down";
-        "scroll_button" = 279;
-        "natural_scroll" = true;
       };
 
 #      monitor = map 
@@ -151,13 +145,10 @@
       };
 
       windowrulev2 = [
-       "workspace 1,class:kitty"
+       "workspace 1,class:alacritty"
        "workspace 2,title:^(Mozilla Firefox)(.*)$"
        "workspace special:notes,title:^(kitty-delta)"
        "workspace special:term,title:^(kitty-scratch)"
-       "workspace 3,class:Slack"
-       "workspace 3,class:WebCord"
-       "float,title:(GnuCash Tip Of The Day)"
        "float,title:(Firefox — Sharing Indicator)"
       ];
 
