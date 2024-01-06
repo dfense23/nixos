@@ -14,6 +14,8 @@
     # Official NixOS package source, using nixos-23.11 branch here
     # nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # NixOS Hardware Packages
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     # home-manager.url = "github:nix-community/home-manager/release-23.11";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -48,7 +50,7 @@
   # 
   # The `@` syntax here is used to alias the attribute set of the
   # inputs's parameter, making it convenient to use inside the function.
-  outputs = { self, nixpkgs, home-manager, lanzaboote, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, lanzaboote, nixos-hardware, ... }@inputs: {
     nixosConfigurations = {
       # By default, NixOS will try to refer the nixosConfiguration with
       # its hostname, so the system named `nixos-test` will use this one.
@@ -154,6 +156,7 @@
           # Import the configuration.nix here, so that the
           # old configuration file can still take effect.
           # Note: configuration.nix itself is also a Nixpkgs Module,
+	  nixos-hardware.nixosModules.apple-t2
           ./configuration.nix
           ./hosts/mac/hardware-configuration.nix
           ./hosts/mac/specconf.nix
