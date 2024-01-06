@@ -13,6 +13,9 @@
     arandr
     font-manager
     firefox
+    digikam
+    geeqie
+    gwenview
   ];
 
 #  home.file."wallpaper/wallpaper.png".source = ./home/desktop/nix-wallpaper-dracula.png;

@@ -160,6 +160,7 @@
           ./configuration.nix
           ./hosts/mac/hardware-configuration.nix
           ./hosts/mac/specconf.nix
+          ./snakepit/macmounts.nix
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
           home-manager.nixosModules.home-manager
