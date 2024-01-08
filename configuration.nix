@@ -11,6 +11,9 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot";
   boot.bootspec.enable = true;
+#  #boot.loader.grub.enable = true;
+  boot.loader.grub.device = "nodev";
+  boot.loader.grub.useOSProber = true;
   # boot.kernelPackages = pkgs.linuxPackages_latest # for latest kernel
   # boot.kernelPackages =
   #  pkgs.linuxKernel.packages.linux_5_4; # kernel downgrade because of ACPI errors on minix with latest kernel (ic2)
