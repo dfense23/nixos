@@ -135,7 +135,9 @@
           # Note: configuration.nix itself is also a Nixpkgs Module,
           ./configuration.nix
           ./hosts/omen/hardware-configuration.nix
+      	  nixos-hardware.nixosModules.omen-16-n0005ne
           ./hosts/omen/specconf.nix
+          ./snakepit/defaultmounts.nix
           lanzaboote.nixosModules.lanzaboote
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
@@ -156,11 +158,11 @@
           # Import the configuration.nix here, so that the
           # old configuration file can still take effect.
           # Note: configuration.nix itself is also a Nixpkgs Module,
-	  nixos-hardware.nixosModules.apple-t2
           ./configuration.nix
           ./hosts/mac/hardware-configuration.nix
+      	  nixos-hardware.nixosModules.apple-t2
           ./hosts/mac/specconf.nix
-          ./snakepit/macmounts.nix
+          ./snakepit/defaultmounts.nix
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
           home-manager.nixosModules.home-manager
