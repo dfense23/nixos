@@ -17,7 +17,6 @@
     geeqie
     gwenview
     clapper
-    nemo
     mpv
   ];
 

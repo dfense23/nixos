@@ -15,7 +15,7 @@
     navi
     gcc
     duf
-  ];
-
-
+    wirelesstools
+    manix
+    nvd ];
 }
