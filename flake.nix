@@ -134,6 +134,7 @@
           # old configuration file can still take effect.
           # Note: configuration.nix itself is also a Nixpkgs Module,
           ./configuration.nix
+          ./packages/desktop/default.nix
           ./hosts/omen/hardware-configuration.nix
       	  nixos-hardware.nixosModules.omen-16-n0005ne
           ./hosts/omen/specconf.nix
@@ -159,6 +160,7 @@
           # old configuration file can still take effect.
           # Note: configuration.nix itself is also a Nixpkgs Module,
           ./configuration.nix
+          ./packages/desktop/default.nix
           ./hosts/mac/hardware-configuration.nix
       	  nixos-hardware.nixosModules.apple-t2
           ./hosts/mac/specconf.nix
