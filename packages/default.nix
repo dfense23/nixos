@@ -17,5 +17,6 @@
     duf
     wirelesstools
     manix
+    ncdu
     nvd ];
 }
