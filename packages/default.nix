@@ -17,7 +17,9 @@
     duf
     protonvpn-gui
     protonvpn-cli
-  ];
-
-
+    wirelesstools
+    manix
+    ncdu
+    nvd 
+    ];
 }

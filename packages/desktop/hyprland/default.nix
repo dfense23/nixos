@@ -18,6 +18,10 @@
     wl-clipboard
     cliphist
     wayvnc
+    nwg-displays
+    xdg-desktop-portal-hyprland
+    nwg-displays
+    xdg-desktop-portal-hyprland
   ];
 
   programs.wofi.enable = true;

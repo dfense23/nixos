@@ -16,6 +16,8 @@
     digikam
     geeqie
     gwenview
+    clapper
+    mpv
   ];
 
 #  home.file."wallpaper/wallpaper.png".source = ./home/desktop/nix-wallpaper-dracula.png;
