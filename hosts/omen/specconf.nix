@@ -6,6 +6,7 @@
 
 {
   boot.kernelPackages = pkgs.linuxPackages_latest; # for latest kernel
+  boot.bootspec.enable = true;
 #  boot.kernelPackages =
 #    pkgs.linuxKernel.packages.linux_5_4; # kernel downgrade because of ACPI errors on minix with latest kernel (ic2)
   boot = {

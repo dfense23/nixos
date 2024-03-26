@@ -15,6 +15,8 @@
     navi
     gcc
     duf
+    protonvpn-gui
+    protonvpn-cli
   ];
 
 
