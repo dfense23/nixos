@@ -10,6 +10,7 @@
     eza
     git
     lazygit
+    jujutsu
     gh
     zoxide
     navi
@@ -18,5 +19,8 @@
     wirelesstools
     manix
     ncdu
-    nvd ];
+    nvd 
+    du-dust
+    fd
+    ];
 }
