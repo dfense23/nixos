@@ -105,15 +105,16 @@
         # you must use `specialArgs` by uncomment the following line:
         #
         # specialArgs = {...};  # pass custom arguments into all sub module.
-        modules = [
           # Import the configuration.nix here, so that the
           # old configuration file can still take effect.
           # Note: configuration.nix itself is also a Nixpkgs Module,
+        modules = [
           ./configuration.nix
           ./hosts/minix/hardware-configuration.nix
           ./hosts/minix/specconf.nix
-          ./packages/docker.nix
           ./snakepit/minixmounts.nix
+          ./packages/default.nix
+        #docker.enable = true;
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
           home-manager.nixosModules.home-manager

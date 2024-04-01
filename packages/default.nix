@@ -2,6 +2,12 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+
+  imports = [
+    ./docker.nix
+  ];
+  docker.enable = lib.mkDefault true;
+
   environment.systemPackages = with pkgs; [
     cifs-utils
     nfs-utils

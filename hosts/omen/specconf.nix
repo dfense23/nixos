@@ -22,6 +22,12 @@
   networking.hostName = "omen"; # Define your hostname.
 #  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
+  home-manager.extraSpecialArgs = {
+    vars = {
+      desktop = true;
+    };
+  };
+
   time.hardwareClockInLocalTime = true;
 
   # Configure network proxy if necessary

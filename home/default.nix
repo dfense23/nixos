@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, inputs, vars, ... }:
 
 {
   home.username = "dfense";
@@ -39,8 +39,7 @@
   imports = [
     ./programs # import packages
     ./shell # import shell programs configs
-    ./desktop
-  ];
+  ] ++ (lib.optionals vars.desktop [ ./desktop ]) ;
 
 
   # This value determines the home Manager release that your

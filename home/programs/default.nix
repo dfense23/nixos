@@ -47,6 +47,9 @@
     # it provides the command `nom` works just like `nix`
     # with more details log output
     nix-output-monitor
+    nh
+    nvd
+    
 
     btop  # replacement of htop/nmon
     iotop # io monitoring

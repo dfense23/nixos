@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-
+{ lib, pkgs, config, inputs, ... }:
 {
 
   home.packages = [ pkgs.inter ];

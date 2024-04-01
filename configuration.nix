@@ -108,9 +108,9 @@
   # Set default editor to vim
   environment.variables.EDITOR = "nvim";
 
-  imports = [
-    ./packages    # import standard packages
-  ];
+  # imports = [
+  #  ./packages    # import standard packages
+  # ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

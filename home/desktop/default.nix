@@ -1,8 +1,8 @@
-{ pkgs, ... }:
+{ lib, config, pkgs, inputs, ... }:
 
 {
   imports = [
-    ./hyprland
+    ./hyprland/default.nix
   ];
 
   home.packages = with pkgs; [ 

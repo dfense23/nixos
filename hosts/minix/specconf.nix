@@ -12,6 +12,12 @@
   networking.networkmanager.enable = true;
   networking.hostName = "minix"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  home-manager.extraSpecialArgs = {
+    vars = {
+      desktop = false;
+    };
+  };
+
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
