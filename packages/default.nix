@@ -19,7 +19,6 @@
     jujutsu
     gh
     zoxide
-    navi
     gcc
     duf
     protonvpn-gui
