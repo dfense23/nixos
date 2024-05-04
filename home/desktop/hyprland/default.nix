@@ -26,6 +26,8 @@
 
   programs.wofi.enable = true;
 
+  wayland.windowManager.hyprland.systemd.variables = ["--all"];
+
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
