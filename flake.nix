@@ -139,6 +139,7 @@
       	  nixos-hardware.nixosModules.omen-16-n0005ne
           ./hosts/omen/specconf.nix
           ./snakepit/defaultmounts.nix
+          ./packages/default.nix
           lanzaboote.nixosModules.lanzaboote
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
@@ -164,6 +165,7 @@
       	  nixos-hardware.nixosModules.apple-t2
           ./hosts/mac/specconf.nix
           ./snakepit/defaultmounts.nix
+          ./packages/default.nix
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
           home-manager.nixosModules.home-manager
