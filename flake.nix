@@ -28,13 +28,13 @@
     # to avoid problems caused by different versions of nixpkgs.
     #  inputs.nixpkgs.follows = "nixpkgs";
     # };
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1;";
     hyprland-contrib = {
-      url = "github:hyprwm/contrib";
+      url = "git+https://github.com/hyprwm/contrib";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland-plugins = {
-    url = "github:hyprwm/hyprland-plugins";
+    url = "git+https://github.com/hyprwm/hyprland-plugins";
     inputs.hyprland.follows = "hyprland";
     };
     lanzaboote.url = "github:nix-community/lanzaboote";
