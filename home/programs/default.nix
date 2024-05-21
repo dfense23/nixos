@@ -19,6 +19,7 @@
     jq # A lightweight and flexible command-line JSON processor
     fzf # A command-line fuzzy finder
     nnn
+    thefuck
 
     # networking tools
     mtr # A network diagnostic tool

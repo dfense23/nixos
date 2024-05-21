@@ -107,6 +107,9 @@
 
   # Set default editor to vim
   environment.variables.EDITOR = "nvim";
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
+
 
   # imports = [
   #  ./packages    # import standard packages

@@ -1,7 +1,8 @@
 { config, lib, pkgs, ... }: {
 
   imports = [
-    ./bash.nix
+    #./bash.nix
+    ./zsh.nix
     ./starship.nix
     ./tmux.nix
     ./alacritty.nix
