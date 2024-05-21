@@ -159,15 +159,17 @@
       "locked": {
         "lastModified": 1716316196,
         "narHash": "sha256-7o31xFAze25uLFOc48tNBkgvr2hIe2sBj1p5wppSgB4=",
-        "owner": "hyprwm",
-        "repo": "Hyprland",
+        "ref": "refs/heads/main",
         "rev": "e419ef1873de01b0762f7f1a411994170a4d8cab",
-        "type": "github"
+        "revCount": 4723,
+        "submodules": false,
+        "type": "git",
+        "url": "https://github.com/hyprwm/Hyprland"
       },
       "original": {
-        "owner": "hyprwm",
-        "repo": "Hyprland",
-        "type": "github"
+        "submodules": false,
+        "type": "git",
+        "url": "https://github.com/hyprwm/Hyprland"
       }
     },
     "hyprland-contrib": {
@@ -179,15 +181,15 @@
       "locked": {
         "lastModified": 1716228712,
         "narHash": "sha256-y+LOXuSRMfkR2Vfwl5K2NVrszi1h5MJpML+msLnVS8U=",
-        "owner": "hyprwm",
-        "repo": "contrib",
+        "ref": "refs/heads/main",
         "rev": "33b38358559054d316eb605ccb733980dfa7dc63",
-        "type": "github"
+        "revCount": 103,
+        "type": "git",
+        "url": "https://github.com/hyprwm/contrib"
       },
       "original": {
-        "owner": "hyprwm",
-        "repo": "contrib",
-        "type": "github"
+        "type": "git",
+        "url": "https://github.com/hyprwm/contrib"
       }
     },
     "hyprland-plugins": {
@@ -204,15 +206,15 @@
       "locked": {
         "lastModified": 1715722806,
         "narHash": "sha256-KrSLG2H3KGELxTFdiBhv8U6D53Q3UsJsQO+KgEabsNA=",
-        "owner": "hyprwm",
-        "repo": "hyprland-plugins",
+        "ref": "refs/heads/main",
         "rev": "c28d1011f4868c1a1ee80b10d9ee79900686df82",
-        "type": "github"
+        "revCount": 169,
+        "type": "git",
+        "url": "https://github.com/hyprwm/hyprland-plugins"
       },
       "original": {
-        "owner": "hyprwm",
-        "repo": "hyprland-plugins",
-        "type": "github"
+        "type": "git",
+        "url": "https://github.com/hyprwm/hyprland-plugins"
       }
     },
     "hyprland-protocols": {
