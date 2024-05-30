@@ -34,8 +34,6 @@
     LC_TIME = "de_CH.UTF-8";
   };
 
-  programs.hyprland.enable = true;
-
   fonts = {
     packages = with pkgs; [
       # icon fonts
@@ -62,6 +60,11 @@
       monospace = [ "JetBrainsMono Nerd Font" "Noto Color Emoji" ];
       emoji = [ "Noto Color Emoji" ];
     };
+  };
+
+  mkIf lib.optionals vars.desktop programs.hyprland = {
+    enable = true;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
 
   # Configure keymap in X11
@@ -93,6 +96,11 @@
       # "https://mirrors.ustc.edu.cn/nix-channels/store"
       "https://cache.nixos.org"
     ];
+    # configuration.nix
+    nix.settings = {
+      substituters = ["https://hyprland.cachix.org"];
+      trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+    };
 
     trusted-public-keys = [
       # the default public key of cache.nixos.org, it's built-in, no need to add it here

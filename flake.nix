@@ -130,6 +130,7 @@
       };
       omen = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = { inherit inputs; }; # this is the important part, from Hyprland
         modules = [
           # Import the configuration.nix here, so that the
           # old configuration file can still take effect.
